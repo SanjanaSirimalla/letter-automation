@@ -1,26 +1,61 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useForm, Controller } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as Yup from "yup";
 
 const defaultTheme = createTheme();
 
+const validationSchema = Yup.object().shape({
+  firstName: Yup.string()
+    .matches(/^[A-Za-z]+$/, "Only alphabets are allowed")
+    .min(4, "First Name must be at least 4 characters")
+    .required("First Name is required"),
+  lastName: Yup.string()
+    .matches(/^[A-Za-z]+$/, "Only alphabets are allowed")
+    .min(4, "Last Name must be at least 4 characters")
+    .required("Last Name is required"),
+  rollNumber: Yup.string()
+    .matches(/^\d{4}[15]A[A-Za-z0-9]{4}$/, "Invalid roll number format")
+    .length(10, "Roll number must be exactly 10 characters")
+    .required("Roll number is required"),
+  password: Yup.string()
+    .min(8, "Password must be at least 8 characters")
+    .required("Password is required"),
+});
+
 export default function SignUp() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+  const {
+    control,
+    handleSubmit,
+    watch,
+    setValue,
+    formState: { errors, isValid },
+  } = useForm({
+    resolver: yupResolver(validationSchema),
+    mode: "onChange", // Enable onChange mode to update validity on field change
+  });
+
+  const rollNumber = watch("rollNumber");
+
+  React.useEffect(() => {
+    if (rollNumber && /^\d{4}[15]A[A-Za-z0-9]{4}$/.test(rollNumber)) {
+      setValue("email", `${rollNumber}@vnrvjiet.in`);
+    }
+  }, [rollNumber, setValue]);
+
+  const onSubmit = (data) => {
+    console.log(data);
   };
 
   return (
@@ -44,50 +79,98 @@ export default function SignUp() {
           <Box
             component="form"
             noValidate
-            onSubmit={handleSubmit}
+            onSubmit={handleSubmit(onSubmit)}
             sx={{ mt: 3 }}
           >
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="given-name"
+                <Controller
                   name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  autoFocus
+                  control={control}
+                  defaultValue=""
+                  render={({ field }) => (
+                    <TextField
+                      {...field}
+                      fullWidth
+                      id="firstName"
+                      label="First Name"
+                      error={!!errors.firstName}
+                      helperText={errors.firstName?.message}
+                    />
+                  )}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
+                <Controller
                   name="lastName"
-                  autoComplete="family-name"
+                  control={control}
+                  defaultValue=""
+                  render={({ field }) => (
+                    <TextField
+                      {...field}
+                      fullWidth
+                      id="lastName"
+                      label="Last Name"
+                      error={!!errors.lastName}
+                      helperText={errors.lastName?.message}
+                    />
+                  )}
                 />
               </Grid>
               <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
+                <Controller
+                  name="rollNumber"
+                  control={control}
+                  defaultValue=""
+                  render={({ field }) => (
+                    <TextField
+                      {...field}
+                      fullWidth
+                      id="rollNumber"
+                      label="Roll Number"
+                      error={!!errors.rollNumber}
+                      helperText={errors.rollNumber?.message}
+                    />
+                  )}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Controller
                   name="email"
-                  autoComplete="email"
+                  control={control}
+                  defaultValue=""
+                  render={({ field }) => (
+                    <TextField
+                      {...field}
+                      fullWidth
+                      id="email"
+                      label="Email Address"
+                      InputProps={{
+                        readOnly: true,
+                      }}
+                      error={!!errors.email}
+                      helperText={errors.email?.message}
+                    />
+                  )}
                 />
               </Grid>
               <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
+                <Controller
                   name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
+                  control={control}
+                  defaultValue=""
+                  render={({ field }) => (
+                    <TextField
+                      {...field}
+                      fullWidth
+                      name="password"
+                      label="Password"
+                      type="password"
+                      id="password"
+                      error={!!errors.password}
+                      helperText={errors.password?.message}
+                    />
+                  )}
                 />
               </Grid>
             </Grid>
@@ -96,12 +179,13 @@ export default function SignUp() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              disabled={!isValid} // Disable the button if the form is not valid
             >
               Sign Up
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link to="/login" variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>
