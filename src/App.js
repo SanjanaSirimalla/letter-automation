@@ -5,6 +5,10 @@ import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
 import Outpass from "./forms/Outpass";
 import Attendance from "./forms/Attendance";
+import Bonafide from "./forms/Bonafide";
+import Condonation from "./forms/Condonation";
+import Homepass from "./forms/Homepass";
+import ConductEvent from "./forms/ConductEvent";
 function App() {
   return (
     <div>
@@ -16,6 +20,10 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/outpass" element={<Outpass />} />
           <Route path="/attendance" element={<Attendance />} />
+          <Route path="/bonafide" element={<Bonafide />} />
+          <Route path="/condonation" element={<Condonation />} />
+          <Route path="/homepass" element={<Homepass />} />
+          <Route path="/to-conduct-event" element={<ConductEvent />} />
         </Routes>
       </BrowserRouter>
     </div>

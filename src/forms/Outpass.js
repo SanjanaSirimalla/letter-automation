@@ -7,7 +7,8 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import outpass from "../images/outpass.jpg"; // Ensure the correct path to the image
+import outpass from "../images/outpass.jpg";
+import Header from "../components/Header";
 
 export default function Outpass() {
   const [formData, setFormData] = React.useState({
@@ -54,352 +55,355 @@ export default function Outpass() {
   };
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "space-around",
-        padding: 3,
-        backgroundColor: "#1c1c1c",
-        minHeight: "100vh",
-      }}
-    >
+    <>
+      <Header />
       <Box
         sx={{
-          flex: 1,
           display: "flex",
-          justifyContent: "center",
-          alignItems: "flex-start",
+          justifyContent: "space-around",
+          padding: 3,
+          backgroundColor: "#1c1c1c",
+          minHeight: "100vh",
         }}
       >
-        <Card
-          sx={{
-            maxWidth: "80%",
-            margin: 2,
-            border: "1px solid black",
-            backgroundColor: "purple",
-          }}
-        >
-          <CardMedia
-            component="img"
-            image={outpass}
-            title="Letter example image"
-            sx={{ objectFit: "contain", margin: 0 }}
-          />
-        </Card>
-      </Box>
-
-      <Box
-        sx={{
-          flex: 1,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Card
-          sx={{
-            padding: 2,
-            backgroundColor: "#6200ea",
-            color: "white",
-            width: "100%",
-            maxWidth: 600,
-          }}
-        >
-          <CardContent>
-            <Typography
-              variant="h5"
-              component="div"
-              sx={{ textAlign: "center", marginBottom: 2 }}
-            >
-              FORM
-            </Typography>
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
-                  fullWidth
-                  variant="outlined"
-                  label="Date"
-                  name="date"
-                  value={formData.date}
-                  onChange={handleChange}
-                  InputLabelProps={{
-                    style: { color: "white" },
-                  }}
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      "& fieldset": {
-                        borderColor: "white",
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "white",
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "white",
-                      },
-                      "& input": {
-                        color: "white",
-                      },
-                    },
-                    "& label.Mui-focused": {
-                      color: "white",
-                    },
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  fullWidth
-                  variant="outlined"
-                  label="Name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  InputLabelProps={{
-                    style: { color: "white" },
-                  }}
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      "& fieldset": {
-                        borderColor: "white",
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "white",
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "white",
-                      },
-                      "& input": {
-                        color: "white",
-                      },
-                    },
-                    "& label.Mui-focused": {
-                      color: "white",
-                    },
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  fullWidth
-                  variant="outlined"
-                  label="Roll Number"
-                  name="rollNumber"
-                  value={formData.rollNumber}
-                  onChange={handleChange}
-                  InputLabelProps={{
-                    style: { color: "white" },
-                  }}
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      "& fieldset": {
-                        borderColor: "white",
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "white",
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "white",
-                      },
-                      "& input": {
-                        color: "white",
-                      },
-                    },
-                    "& label.Mui-focused": {
-                      color: "white",
-                    },
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  fullWidth
-                  variant="outlined"
-                  label="Year of Study"
-                  name="yearOfStudy"
-                  value={formData.yearOfStudy}
-                  onChange={handleChange}
-                  InputLabelProps={{
-                    style: { color: "white" },
-                  }}
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      "& fieldset": {
-                        borderColor: "white",
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "white",
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "white",
-                      },
-                      "& input": {
-                        color: "white",
-                      },
-                    },
-                    "& label.Mui-focused": {
-                      color: "white",
-                    },
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  fullWidth
-                  variant="outlined"
-                  label="Department"
-                  name="department"
-                  value={formData.department}
-                  onChange={handleChange}
-                  InputLabelProps={{
-                    style: { color: "white" },
-                  }}
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      "& fieldset": {
-                        borderColor: "white",
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "white",
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "white",
-                      },
-                      "& input": {
-                        color: "white",
-                      },
-                    },
-                    "& label.Mui-focused": {
-                      color: "white",
-                    },
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  fullWidth
-                  variant="outlined"
-                  label="Reason"
-                  name="reason"
-                  value={formData.reason}
-                  onChange={handleChange}
-                  InputLabelProps={{
-                    style: { color: "white" },
-                  }}
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      "& fieldset": {
-                        borderColor: "white",
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "white",
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "white",
-                      },
-                      "& input": {
-                        color: "white",
-                      },
-                    },
-                    "& label.Mui-focused": {
-                      color: "white",
-                    },
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12} sx={{ textAlign: "center" }}>
-                <Button
-                  variant="contained"
-                  sx={{
-                    background: "linear-gradient(to right, #34e89e, #0f3443)",
-                    color: "white",
-                  }}
-                  onClick={handleSave}
-                >
-                  Save
-                </Button>
-              </Grid>
-            </Grid>
-          </CardContent>
-        </Card>
         <Box
           sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            width: "100%",
-            maxWidth: 600,
-            marginTop: 2,
-          }}
-        >
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: isSaved ? "purple" : "grey",
-              cursor: isSaved ? "pointer" : "not-allowed",
-            }}
-            disabled={!isSaved}
-            onClick={handleDownload}
-          >
-            Download
-          </Button>
-        </Box>
-        <Box
-          sx={{
+            flex: 1,
             display: "flex",
             justifyContent: "center",
-            alignItems: "center",
-            width: "100%",
-            maxWidth: 600,
-            marginTop: 2,
+            alignItems: "flex-start",
           }}
         >
-          <TextField
-            fullWidth
-            variant="outlined"
-            label="Enter a mail"
-            value={email}
-            onChange={handleEmailChange}
-            InputLabelProps={{
-              style: { color: "white" },
-            }}
+          <Card
             sx={{
-              "& .MuiOutlinedInput-root": {
-                "& fieldset": {
-                  borderColor: "white",
+              maxWidth: "80%",
+              margin: 2,
+              border: "1px solid black",
+              backgroundColor: "purple",
+            }}
+          >
+            <CardMedia
+              component="img"
+              image={outpass}
+              title="Letter example image"
+              sx={{ objectFit: "contain", margin: 0 }}
+            />
+          </Card>
+        </Box>
+
+        <Box
+          sx={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Card
+            sx={{
+              padding: 2,
+              backgroundColor: "#6200ea",
+              color: "white",
+              width: "100%",
+              maxWidth: 600,
+            }}
+          >
+            <CardContent>
+              <Typography
+                variant="h5"
+                component="div"
+                sx={{ textAlign: "center", marginBottom: 2 }}
+              >
+                OUTPASS FORM
+              </Typography>
+              <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <TextField
+                    fullWidth
+                    variant="outlined"
+                    label="Date"
+                    name="date"
+                    value={formData.date}
+                    onChange={handleChange}
+                    InputLabelProps={{
+                      style: { color: "white" },
+                    }}
+                    sx={{
+                      "& .MuiOutlinedInput-root": {
+                        "& fieldset": {
+                          borderColor: "white",
+                        },
+                        "&:hover fieldset": {
+                          borderColor: "white",
+                        },
+                        "&.Mui-focused fieldset": {
+                          borderColor: "white",
+                        },
+                        "& input": {
+                          color: "white",
+                        },
+                      },
+                      "& label.Mui-focused": {
+                        color: "white",
+                      },
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    fullWidth
+                    variant="outlined"
+                    label="Name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    InputLabelProps={{
+                      style: { color: "white" },
+                    }}
+                    sx={{
+                      "& .MuiOutlinedInput-root": {
+                        "& fieldset": {
+                          borderColor: "white",
+                        },
+                        "&:hover fieldset": {
+                          borderColor: "white",
+                        },
+                        "&.Mui-focused fieldset": {
+                          borderColor: "white",
+                        },
+                        "& input": {
+                          color: "white",
+                        },
+                      },
+                      "& label.Mui-focused": {
+                        color: "white",
+                      },
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    fullWidth
+                    variant="outlined"
+                    label="Roll Number"
+                    name="rollNumber"
+                    value={formData.rollNumber}
+                    onChange={handleChange}
+                    InputLabelProps={{
+                      style: { color: "white" },
+                    }}
+                    sx={{
+                      "& .MuiOutlinedInput-root": {
+                        "& fieldset": {
+                          borderColor: "white",
+                        },
+                        "&:hover fieldset": {
+                          borderColor: "white",
+                        },
+                        "&.Mui-focused fieldset": {
+                          borderColor: "white",
+                        },
+                        "& input": {
+                          color: "white",
+                        },
+                      },
+                      "& label.Mui-focused": {
+                        color: "white",
+                      },
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    fullWidth
+                    variant="outlined"
+                    label="Year of Study"
+                    name="yearOfStudy"
+                    value={formData.yearOfStudy}
+                    onChange={handleChange}
+                    InputLabelProps={{
+                      style: { color: "white" },
+                    }}
+                    sx={{
+                      "& .MuiOutlinedInput-root": {
+                        "& fieldset": {
+                          borderColor: "white",
+                        },
+                        "&:hover fieldset": {
+                          borderColor: "white",
+                        },
+                        "&.Mui-focused fieldset": {
+                          borderColor: "white",
+                        },
+                        "& input": {
+                          color: "white",
+                        },
+                      },
+                      "& label.Mui-focused": {
+                        color: "white",
+                      },
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    fullWidth
+                    variant="outlined"
+                    label="Department"
+                    name="department"
+                    value={formData.department}
+                    onChange={handleChange}
+                    InputLabelProps={{
+                      style: { color: "white" },
+                    }}
+                    sx={{
+                      "& .MuiOutlinedInput-root": {
+                        "& fieldset": {
+                          borderColor: "white",
+                        },
+                        "&:hover fieldset": {
+                          borderColor: "white",
+                        },
+                        "&.Mui-focused fieldset": {
+                          borderColor: "white",
+                        },
+                        "& input": {
+                          color: "white",
+                        },
+                      },
+                      "& label.Mui-focused": {
+                        color: "white",
+                      },
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    fullWidth
+                    variant="outlined"
+                    label="Reason"
+                    name="reason"
+                    value={formData.reason}
+                    onChange={handleChange}
+                    InputLabelProps={{
+                      style: { color: "white" },
+                    }}
+                    sx={{
+                      "& .MuiOutlinedInput-root": {
+                        "& fieldset": {
+                          borderColor: "white",
+                        },
+                        "&:hover fieldset": {
+                          borderColor: "white",
+                        },
+                        "&.Mui-focused fieldset": {
+                          borderColor: "white",
+                        },
+                        "& input": {
+                          color: "white",
+                        },
+                      },
+                      "& label.Mui-focused": {
+                        color: "white",
+                      },
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={12} sx={{ textAlign: "center" }}>
+                  <Button
+                    variant="contained"
+                    sx={{
+                      background: "linear-gradient(to right, #34e89e, #0f3443)",
+                      color: "white",
+                    }}
+                    onClick={handleSave}
+                  >
+                    Save
+                  </Button>
+                </Grid>
+              </Grid>
+            </CardContent>
+          </Card>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              width: "100%",
+              maxWidth: 600,
+              marginTop: 2,
+            }}
+          >
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: isSaved ? "purple" : "grey",
+                cursor: isSaved ? "pointer" : "not-allowed",
+              }}
+              disabled={!isSaved}
+              onClick={handleDownload}
+            >
+              Download
+            </Button>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "100%",
+              maxWidth: 600,
+              marginTop: 2,
+            }}
+          >
+            <TextField
+              fullWidth
+              variant="outlined"
+              label="Enter a mail"
+              value={email}
+              onChange={handleEmailChange}
+              InputLabelProps={{
+                style: { color: "white" },
+              }}
+              sx={{
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderColor: "white",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "white",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "white",
+                  },
+                  "& input": {
+                    color: "white",
+                  },
                 },
-                "&:hover fieldset": {
-                  borderColor: "white",
-                },
-                "&.Mui-focused fieldset": {
-                  borderColor: "white",
-                },
-                "& input": {
+                "& label.Mui-focused": {
                   color: "white",
                 },
-              },
-              "& label.Mui-focused": {
-                color: "white",
-              },
-            }}
-          />
-          <Button
-            variant="contained"
-            sx={{
-              marginLeft: 2,
-              background: "linear-gradient(to right, #34e89e, #0f3443)",
-              width: "20%",
-            }}
-            onClick={handleSend}
-          >
-            Send
-          </Button>
+              }}
+            />
+            <Button
+              variant="contained"
+              sx={{
+                marginLeft: 2,
+                background: "linear-gradient(to right, #34e89e, #0f3443)",
+                width: "20%",
+              }}
+              onClick={handleSend}
+            >
+              Send
+            </Button>
+          </Box>
+          {emailError && (
+            <Typography variant="body2" sx={{ color: "red", marginTop: 1 }}>
+              {emailError}
+            </Typography>
+          )}
         </Box>
-        {emailError && (
-          <Typography variant="body2" sx={{ color: "red", marginTop: 1 }}>
-            {emailError}
-          </Typography>
-        )}
       </Box>
-    </Box>
+    </>
   );
 }

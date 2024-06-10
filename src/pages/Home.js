@@ -68,7 +68,7 @@ export default function Home() {
                     image={item.img}
                     title={item.title}
                   />
-                  <CardContent sx={{ paddingBottom: 2 }}>
+                  <CardContent>
                     <Typography
                       variant="h6"
                       component="div"

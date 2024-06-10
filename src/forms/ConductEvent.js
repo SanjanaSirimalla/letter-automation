@@ -113,7 +113,7 @@ export default function Outpass() {
               component="div"
               sx={{ textAlign: "center", marginBottom: 2 }}
             >
-              ATTENDANCE FORM
+              FORM TO CONDUCT EVENT
             </Typography>
             <Grid container spacing={2}>
               <Grid item xs={12}>
