@@ -9,6 +9,9 @@ import Bonafide from "./forms/Bonafide";
 import Condonation from "./forms/Condonation";
 import Homepass from "./forms/Homepass";
 import ConductEvent from "./forms/ConductEvent";
+import History from "./pages/History";
+import Error from "./pages/Error";
+import Status from "./pages/Status";
 function App() {
   return (
     <div>
@@ -24,6 +27,9 @@ function App() {
           <Route path="/condonation" element={<Condonation />} />
           <Route path="/homepass" element={<Homepass />} />
           <Route path="/to-conduct-event" element={<ConductEvent />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/status" element={<Status />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>
     </div>

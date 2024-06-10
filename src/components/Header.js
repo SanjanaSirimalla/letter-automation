@@ -11,10 +11,16 @@ import LogoutIcon from "@mui/icons-material/Logout";
 export default function Header() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: "black" }}>
+      <AppBar
+        position="static"
+        sx={{
+          backgroundColor: "#FBDA61",
+          backgroundImage: "linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%)",
+        }}
+      >
         <Toolbar>
           <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
-            <Link to="/" variant="body2">
+            <Link to="/status" variant="body2">
               <Button
                 startIcon={<HomeIcon />}
                 color="inherit"
@@ -27,7 +33,7 @@ export default function Header() {
                 Home
               </Button>
             </Link>
-            <Link to="/123" variant="body2">
+            <Link to="/history" variant="body2">
               <Button
                 startIcon={<HistoryIcon />}
                 color="inherit"

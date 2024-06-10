@@ -31,9 +31,27 @@ export default function Outpass() {
     });
   };
 
-  const handleSave = () => {
-    // Implement save functionality here
-    setIsSaved(true);
+  const handleSave = async () => {
+    try {
+      const response = await fetch("https://your-backend-api.com/api/outpass", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSaved(true);
+        // Additional logic if needed
+      } else {
+        console.error("Failed to save the form data");
+        // Handle error response
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      // Handle network error
+    }
   };
 
   const handleDownload = () => {
@@ -62,7 +80,8 @@ export default function Outpass() {
           display: "flex",
           justifyContent: "space-around",
           padding: 3,
-          backgroundColor: "#1c1c1c",
+          backgroundColor: "#D9AFD9",
+          backgroundImage: "linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%)",
           minHeight: "100vh",
         }}
       >
