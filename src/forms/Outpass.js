@@ -12,7 +12,6 @@ import Header from "../components/Header";
 
 export default function Outpass() {
   const [formData, setFormData] = React.useState({
-    date: "",
     name: "",
     rollNumber: "",
     yearOfStudy: "",
@@ -122,7 +121,7 @@ export default function Outpass() {
           <Card
             sx={{
               padding: 2,
-              backgroundColor: "#6200ea",
+              backgroundColor: "#9575cd",
               color: "white",
               width: "100%",
               maxWidth: 600,
@@ -137,38 +136,6 @@ export default function Outpass() {
                 OUTPASS FORM
               </Typography>
               <Grid container spacing={2}>
-                <Grid item xs={12}>
-                  <TextField
-                    fullWidth
-                    variant="outlined"
-                    label="Date"
-                    name="date"
-                    value={formData.date}
-                    onChange={handleChange}
-                    InputLabelProps={{
-                      style: { color: "white" },
-                    }}
-                    sx={{
-                      "& .MuiOutlinedInput-root": {
-                        "& fieldset": {
-                          borderColor: "white",
-                        },
-                        "&:hover fieldset": {
-                          borderColor: "white",
-                        },
-                        "&.Mui-focused fieldset": {
-                          borderColor: "white",
-                        },
-                        "& input": {
-                          color: "white",
-                        },
-                      },
-                      "& label.Mui-focused": {
-                        color: "white",
-                      },
-                    }}
-                  />
-                </Grid>
                 <Grid item xs={12}>
                   <TextField
                     fullWidth
@@ -193,6 +160,7 @@ export default function Outpass() {
                         },
                         "& input": {
                           color: "white",
+                          background: "#7986cb",
                         },
                       },
                       "& label.Mui-focused": {

@@ -28,6 +28,9 @@ export default function Header() {
                   marginRight: 4,
                   color: "white",
                   backgroundColor: "#424242",
+                  "&:hover": {
+                    backgroundColor: "#616161",
+                  },
                 }}
               >
                 Home
@@ -37,7 +40,13 @@ export default function Header() {
               <Button
                 startIcon={<HistoryIcon />}
                 color="inherit"
-                sx={{ color: "white", backgroundColor: "#424242" }}
+                sx={{
+                  color: "white",
+                  backgroundColor: "#424242",
+                  "&:hover": {
+                    backgroundColor: "#616161",
+                  },
+                }}
               >
                 History
               </Button>
@@ -47,7 +56,13 @@ export default function Header() {
             <Button
               startIcon={<LogoutIcon />}
               color="inherit"
-              sx={{ color: "white", backgroundColor: "#424242" }}
+              sx={{
+                color: "white",
+                backgroundColor: "#424242",
+                "&:hover": {
+                  backgroundColor: "#616161",
+                },
+              }}
             >
               Logout
             </Button>

@@ -4,8 +4,8 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
+// import FormControlLabel from "@mui/material/FormControlLabel";
+// import Checkbox from "@mui/material/Checkbox";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -20,16 +20,13 @@ import sidepic from "../images/sidepic.jpeg";
 const defaultTheme = createTheme();
 
 const validationSchema = Yup.object().shape({
-  firstName: Yup.string()
-    .matches(/^[A-Za-z]+$/, "Only alphabets are allowed")
-    .min(4, "First Name must be at least 4 characters")
-    .required("First Name is required"),
-  lastName: Yup.string()
-    .matches(/^[A-Za-z]+$/, "Only alphabets are allowed")
-    .min(4, "Last Name must be at least 4 characters")
-    .required("Last Name is required"),
+  username: Yup.string()
+    .matches(/^[A-Za-z0-9]+$/, "alphabets and digits only")
+    .min(4, "username must be at least 4 characters")
+    .required("Username is required"),
   password: Yup.string()
-    .min(8, "Password must be at least 8 characters")
+    .min(6, "Password must be between 6 and 12 characters")
+    .max(12, "Password must be between 6 and 12 characters")
     .required("Password is required"),
 });
 
@@ -80,7 +77,7 @@ export default function SignIn() {
             <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
               <LockOutlinedIcon />
             </Avatar>
-            <Typography component="h1" variant="h5">
+            <Typography component="h1" variant="h5" sx={{ m: 1 }}>
               Sign in
             </Typography>
             <Box
@@ -89,7 +86,7 @@ export default function SignIn() {
               onSubmit={handleSubmit(onSubmit)}
               sx={{ mt: 1 }}
             >
-              <Controller
+              {/* <Controller
                 name="firstName"
                 control={control}
                 defaultValue=""
@@ -122,7 +119,23 @@ export default function SignIn() {
                     helperText={errors.lastName?.message}
                   />
                 )}
+              /> */}
+              <Controller
+                name="username"
+                control={control}
+                defaultValue=""
+                render={({ field }) => (
+                  <TextField
+                    {...field}
+                    fullWidth
+                    id="username"
+                    label="Username"
+                    error={!!errors.username}
+                    helperText={errors.username?.message}
+                  />
+                )}
               />
+
               <Controller
                 name="password"
                 control={control}
@@ -141,17 +154,17 @@ export default function SignIn() {
                   />
                 )}
               />
-              <FormControlLabel
+              {/* <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
-              />
+              /> */}
               <Link to="/home" variant="body2">
                 <Button
                   type="submit"
                   fullWidth
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
-                  disabled={!isValid} // Disable the button if the form is not valid
+                  disabled={!isValid}
                 >
                   Sign In
                 </Button>

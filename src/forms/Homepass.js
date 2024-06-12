@@ -11,7 +11,6 @@ import attendance from "../images/attendance.jpg";
 
 export default function Outpass() {
   const [formData, setFormData] = React.useState({
-    date: "",
     name: "",
     rollNumber: "",
     yearOfStudy: "",
@@ -116,38 +115,6 @@ export default function Outpass() {
               HOMEPASS FORM
             </Typography>
             <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
-                  fullWidth
-                  variant="outlined"
-                  label="Date"
-                  name="date"
-                  value={formData.date}
-                  onChange={handleChange}
-                  InputLabelProps={{
-                    style: { color: "white" },
-                  }}
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      "& fieldset": {
-                        borderColor: "white",
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "white",
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "white",
-                      },
-                      "& input": {
-                        color: "white",
-                      },
-                    },
-                    "& label.Mui-focused": {
-                      color: "white",
-                    },
-                  }}
-                />
-              </Grid>
               <Grid item xs={12}>
                 <TextField
                   fullWidth

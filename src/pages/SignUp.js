@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -13,6 +13,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
+import Department from "../components/Department";
 
 const defaultTheme = createTheme();
 
@@ -25,13 +26,19 @@ const validationSchema = Yup.object().shape({
     .matches(/^[A-Za-z]+$/, "Only alphabets are allowed")
     .min(4, "Last Name must be at least 4 characters")
     .required("Last Name is required"),
+  username: Yup.string()
+    .matches(/^[A-Za-z0-9]+$/, "alphabets and digits only")
+    .min(4, "username must be at least 4 characters")
+    .required("Username is required"),
   rollNumber: Yup.string()
     .matches(/^\d{4}[15]A[A-Za-z0-9]{4}$/, "Invalid roll number format")
     .length(10, "Roll number must be exactly 10 characters")
     .required("Roll number is required"),
   password: Yup.string()
-    .min(8, "Password must be at least 8 characters")
+    .min(6, "Password must be between 6 and 12 characters")
+    .max(12, "Password must be between 6 and 12 characters")
     .required("Password is required"),
+  department: Yup.string().required("Department is required"),
 });
 
 export default function SignUp() {
@@ -64,7 +71,7 @@ export default function SignUp() {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 3,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -119,6 +126,23 @@ export default function SignUp() {
               </Grid>
               <Grid item xs={12}>
                 <Controller
+                  name="username"
+                  control={control}
+                  defaultValue=""
+                  render={({ field }) => (
+                    <TextField
+                      {...field}
+                      fullWidth
+                      id="username"
+                      label="Username"
+                      error={!!errors.username}
+                      helperText={errors.username?.message}
+                    />
+                  )}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Controller
                   name="rollNumber"
                   control={control}
                   defaultValue=""
@@ -134,6 +158,7 @@ export default function SignUp() {
                   )}
                 />
               </Grid>
+              <Department control={control} errors={errors} />
               <Grid item xs={12}>
                 <Controller
                   name="email"

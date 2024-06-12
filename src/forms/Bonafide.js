@@ -7,11 +7,10 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import attendance from "../images/attendance.jpg";
+import bonafide from "../images/bonafide.jpg";
 
 export default function Outpass() {
   const [formData, setFormData] = React.useState({
-    date: "",
     name: "",
     rollNumber: "",
     yearOfStudy: "",
@@ -82,7 +81,7 @@ export default function Outpass() {
         >
           <CardMedia
             component="img"
-            image={attendance}
+            image={bonafide}
             title="Letter example image"
             sx={{ objectFit: "contain", margin: 0 }}
           />
@@ -116,38 +115,6 @@ export default function Outpass() {
               BONAFIDE FORM
             </Typography>
             <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
-                  fullWidth
-                  variant="outlined"
-                  label="Date"
-                  name="date"
-                  value={formData.date}
-                  onChange={handleChange}
-                  InputLabelProps={{
-                    style: { color: "white" },
-                  }}
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      "& fieldset": {
-                        borderColor: "white",
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "white",
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "white",
-                      },
-                      "& input": {
-                        color: "white",
-                      },
-                    },
-                    "& label.Mui-focused": {
-                      color: "white",
-                    },
-                  }}
-                />
-              </Grid>
               <Grid item xs={12}>
                 <TextField
                   fullWidth
@@ -315,6 +282,38 @@ export default function Outpass() {
                   label="Reason"
                   name="reason"
                   value={formData.reason}
+                  onChange={handleChange}
+                  InputLabelProps={{
+                    style: { color: "white" },
+                  }}
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      "& fieldset": {
+                        borderColor: "white",
+                      },
+                      "&:hover fieldset": {
+                        borderColor: "white",
+                      },
+                      "&.Mui-focused fieldset": {
+                        borderColor: "white",
+                      },
+                      "& input": {
+                        color: "white",
+                      },
+                    },
+                    "& label.Mui-focused": {
+                      color: "white",
+                    },
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  variant="outlined"
+                  label="Add any extra info if needed"
+                  name="additionalinfo"
+                  value={formData.additionalinfo}
                   onChange={handleChange}
                   InputLabelProps={{
                     style: { color: "white" },

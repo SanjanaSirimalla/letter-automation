@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Outpass from "./forms/Outpass";
 import Attendance from "./forms/Attendance";
 import Bonafide from "./forms/Bonafide";
-import Condonation from "./forms/Condonation";
+import Internship from "./forms/Internship";
 import Homepass from "./forms/Homepass";
 import ConductEvent from "./forms/ConductEvent";
 import History from "./pages/History";
@@ -24,7 +24,7 @@ function App() {
           <Route path="/outpass" element={<Outpass />} />
           <Route path="/attendance" element={<Attendance />} />
           <Route path="/bonafide" element={<Bonafide />} />
-          <Route path="/condonation" element={<Condonation />} />
+          <Route path="/internship" element={<Internship />} />
           <Route path="/homepass" element={<Homepass />} />
           <Route path="/to-conduct-event" element={<ConductEvent />} />
           <Route path="/history" element={<History />} />

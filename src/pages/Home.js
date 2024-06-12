@@ -21,8 +21,8 @@ const itemData = [
   },
   {
     img: "https://lh6.googleusercontent.com/proxy/_92um-b3lTmpwPk0IHsfOvU8Xw1Pu-bu0dDCkl84sIr8njOCCv9cm-BIGAcv_3wZaODkFJdIYAbVpGugHhPU7lkyHXp9AMJMsV1s8XrLfMyCDNJm1HBiQyZQ-QxWJ-4uR_8fuHHRgq1Matm_kQXSYF2dCUTU9_3Bd7SrGWKjQokR8l53G9iso9P8=s0-d",
-    title: "Condonation",
-    link: "/condonation",
+    title: "LOC for Internship",
+    link: "/internship",
   },
   {
     img: "https://corpseeds.blob.core.windows.net/corpseed/BONAFIDE_CERTIFICATE_for_employee.PNG",
@@ -54,13 +54,22 @@ export default function Home() {
         <Grid container spacing={6} justifyContent="center">
           {itemData.map((item) => (
             <Grid item xs={12} sm={6} md={4} key={item.img}>
-              <Link to={item.link} style={{ textDecoration: "none" }}>
+              <Link
+                to={item.link}
+                style={{ textDecoration: "none", display: "block" }}
+              >
                 <Card
                   sx={{
                     maxWidth: 300,
                     margin: "auto",
                     border: "1px solid black",
                     backgroundColor: "black",
+                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+                    transition: "transform 0.3s, box-shadow 0.3s",
+                    "&:hover": {
+                      transform: "scale(1.05)",
+                      boxShadow: "0 8px 16px rgba(0, 0, 0, 0.3)",
+                    },
                   }}
                 >
                   <CardMedia
