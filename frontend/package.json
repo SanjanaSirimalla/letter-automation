@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
@@ -10,21 +9,17 @@
     "@mui/icons-material": "^5.15.19",
     "@mui/material": "^5.15.19",
     "@mui/x-date-pickers": "^7.6.2",
-    "@reduxjs/toolkit": "^2.2.5",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.2",
     "dayjs": "^1.11.11",
-    "os-browserify": "^0.3.0",
-    "path-browserify": "^1.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.51.5",
-    "react-hot-toast": "^2.4.1",
-    "react-redux": "^9.1.2",
     "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
+    "react-toastify": "^10.0.5",
     "web-vitals": "^2.1.4",
     "yup": "^1.4.0"
   },
@@ -51,32 +46,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-=======
-  "name": "backend",
-  "version": "1.0.0",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "keywords": [],
-  "description": "",
-  "dependencies": {
-    "axios": "^1.7.2",
-    "bcrypt": "^5.1.1",
-    "cloudinary": "^2.2.0",
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.4.1",
-    "multer": "^1.4.5-lts.1",
-    "nodemailer": "^6.9.13",
-    "nodemon": "^3.1.3"
->>>>>>> 808da5e0d378a9b890d312b4ea51d18003c3d329
   }
 }
